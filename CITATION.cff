@@ -1,29 +1,32 @@
 cff-version: 1.2.0
-message: "If you use this implementation, please cite the accompanying paper."
+message: If you use this implementation, please cite the accompanying paper.
 type: software
-title: "ddos-model-fusion"
+title: ddos-model-fusion
 authors:
-  - name: "Research software contributors"
+- name: Research software contributors
 version: 0.1.0
-url: "https://github.com/AliAlfatemi/ddos-model-fusion"
+url: https://github.com/AliAlfatemi/ddos-model-fusion
 preferred-citation:
   type: article
-  title: "Identifying Distributed Denial of Service Attacks through Multi-Model Deep Learning Fusion and Combinatorial Analysis"
-  doi: "10.1007/s10922-024-09882-0"
+  title: Identifying Distributed Denial of Service Attacks through Multi-Model Deep Learning Fusion and
+    Combinatorial Analysis
+  doi: 10.1007/s10922-024-09882-0
   authors:
-    - family-names: "Alfatemi"
-      given-names: "Ali"
-    - family-names: "Rahouti"
-      given-names: "Mohamed"
-    - family-names: "Hsu"
-      given-names: "D. Frank"
-    - family-names: "Schweikert"
-      given-names: "Christina"
-    - family-names: "Ghani"
-      given-names: "Nasir"
-    - family-names: "Solyman"
-      given-names: "Aiman"
-    - family-names: "Assaqty"
-      given-names: "Mohammad I. Saryuddin"
-  year: 2024
-  journal: "Journal of Network and Systems Management"
+  - family-names: Alfatemi
+    given-names: Ali
+  - family-names: Rahouti
+    given-names: Mohamed
+  - family-names: Hsu
+    given-names: D. Frank
+  - family-names: Schweikert
+    given-names: Christina
+  - family-names: Ghani
+    given-names: Nasir
+  - family-names: Solyman
+    given-names: Aiman
+  - family-names: Assaqty
+    given-names: Mohammad I. Saryuddin
+  year: 2025
+  journal: Journal of Network and Systems Management
+  volume: 33
+  issue: 1
