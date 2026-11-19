@@ -1,7 +1,9 @@
 """Research model definitions extracted without notebook execution."""
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+
 
 class Conv1(nn.Module):
     def __init__(self, n_features):
@@ -31,6 +33,7 @@ class Conv1(nn.Module):
         x = self.sigmoid(self.fc2(x))
         return x
 
+
 class Model2(nn.Module):
     def __init__(self, n_features, hidden_size, output_size=1):
         super(Model2, self).__init__()
@@ -49,6 +52,7 @@ class Model2(nn.Module):
         out = self.fc(self.dropout(out))
 
         return self.sigmoid(out)
+
 
 class Model3(nn.Module):
     def __init__(self, n_features):
@@ -85,20 +89,32 @@ class Model3(nn.Module):
         x = torch.sigmoid(self.output(x))
         return x
 
+
 class ResidualBlock(nn.Module):
     def __init__(self, in_channels, out_channels, stride=1):
         super(ResidualBlock, self).__init__()
 
-        self.conv1 = nn.Conv1d(in_channels, out_channels, kernel_size=3, stride=stride, padding=1, bias=False)
+        self.conv1 = nn.Conv1d(
+            in_channels,
+            out_channels,
+            kernel_size=3,
+            stride=stride,
+            padding=1,
+            bias=False,
+        )
         self.bn1 = nn.BatchNorm1d(out_channels)
-        self.conv2 = nn.Conv1d(out_channels, out_channels, kernel_size=3, stride=1, padding=1, bias=False)
+        self.conv2 = nn.Conv1d(
+            out_channels, out_channels, kernel_size=3, stride=1, padding=1, bias=False
+        )
         self.bn2 = nn.BatchNorm1d(out_channels)
 
         self.shortcut = nn.Sequential()
         if stride != 1 or in_channels != out_channels:
             self.shortcut = nn.Sequential(
-                nn.Conv1d(in_channels, out_channels, kernel_size=1, stride=stride, bias=False),
-                nn.BatchNorm1d(out_channels)
+                nn.Conv1d(
+                    in_channels, out_channels, kernel_size=1, stride=stride, bias=False
+                ),
+                nn.BatchNorm1d(out_channels),
             )
 
     def forward(self, x):
@@ -107,6 +123,7 @@ class ResidualBlock(nn.Module):
         out += self.shortcut(x)
         out = F.relu(out)
         return out
+
 
 class Model4(nn.Module):
     def __init__(self, n_features):
